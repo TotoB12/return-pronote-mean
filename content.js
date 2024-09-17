@@ -25,7 +25,10 @@ function calculateAndDisplayMean() {
     const mean = count > 0 ? sum / count : 0;
     const formattedMean = mean.toFixed(2).replace('.', ',');
 
-    const targetDiv = document.querySelector('.DonneesListe_DernieresNotes');
+    const InterfaceDernieresNotes = document.querySelector('.InterfaceDernieresNotes');
+    InterfaceDernieresNotes.style.height = 'calc(100% - 40px)';
+
+    const targetDiv = document.querySelector('.ListeDernieresNotes');
     if (targetDiv) {
         let meanDisplay = targetDiv.querySelector('.grade-mean-display');
         if (!meanDisplay) {
@@ -36,6 +39,7 @@ function calculateAndDisplayMean() {
         meanDisplay.textContent = `Moyenne générale: ${formattedMean}`;
         meanDisplay.style.fontWeight = 'bold';
         meanDisplay.style.margin = '10px';
+        meanDisplay.style.height = '20px';
         meanDisplay.style.color = 'red';
     }
 }
